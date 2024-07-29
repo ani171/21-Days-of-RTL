@@ -1,5 +1,3 @@
-
-
 module day1 (
   input   wire [7:0]    a_i,
   input   wire [7:0]    b_i,
