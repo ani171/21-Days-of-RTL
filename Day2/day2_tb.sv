@@ -10,3 +10,22 @@ module day2_tb ();
   logic      q_asyncrst_o;
 
   day2 DAY2 (.*);
+
+  always begin
+    #10 clk=~clk;
+  end
+
+  initial
+    begin
+      reset=1'b1;
+      d_i=1'b0;
+      @(posedge clk);
+      reset=1'b0;
+      @(posedge clk);
+      reset=1'b1;
+      d_i=1'b1;
+      $finish();
+    end
+endmodule
+
+      
